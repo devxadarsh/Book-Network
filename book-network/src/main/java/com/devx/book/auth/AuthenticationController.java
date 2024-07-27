@@ -1,7 +1,5 @@
 package com.devx.book.auth;
 
-//import authentication.auth.AuthenticationService;
-//import authentication.auth.RegistrationRequest;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.mail.MessagingException;
 import jakarta.validation.Valid;
@@ -20,20 +18,18 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public ResponseEntity<?> register(@RequestBody RegistrationRequest request) throws MessagingException {
+    public ResponseEntity<?> register(@RequestBody @Valid RegistrationRequest request) throws MessagingException {
         service.register(request);
         return ResponseEntity.accepted().build();
     }
 
-    @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> authenticate (
-            @RequestBody @Valid AuthenticationRequest request
-    ){
-        return ResponseEntity.ok(service.authenticate(request));
+    @GetMapping("/activate-account")
+    public void confirm(@RequestParam String token) throws MessagingException {
+        service.activateAccount(token);
     }
 
-    @GetMapping("/activate-account")
-    public void confirm( @RequestParam String token) throws MessagingException {
-        service.activateAccount(token);
+    @PostMapping("/authenticate") // for login purpose
+    public ResponseEntity<AuthenticationResponse> authenticate( @RequestBody @Valid AuthenticationRequest request ) {
+        return ResponseEntity.ok(service.authenticate(request));
     }
 }

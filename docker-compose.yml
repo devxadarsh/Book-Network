@@ -28,7 +28,7 @@ services:
     volumes:
       - pgadmin:/var/lib/pgadmin
     ports:
-      - "5050:80"
+      - 5050:80
     networks:
       - spring-demo
     restart: unless-stopped
@@ -38,7 +38,7 @@ services:
     image: maildev/maildev
     ports:
       - 1080:1080
-      - 1026:1026
+      - 1026:1025
 
 networks:
   spring-demo:
@@ -48,4 +48,3 @@ volumes:
   postgres:
     driver: local
   pgadmin:
-#    driver: local

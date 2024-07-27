@@ -110,10 +110,9 @@ public class AuthenticationService {
     }
 
     public void activateAccount(String token) throws MessagingException {
-        Token savedToken = tokenRepository.findByToken(token).orElseThrow(
+        Token savedToken = tokenRepository.findByToken(token)
                 // todo exception have to be defined
-                () -> new RuntimeException("Invalid Token")
-        );
+                .orElseThrow(() -> new RuntimeException("Invalid Token"));
         if (LocalDateTime.now().isAfter(savedToken.getExpiresAt())) {
             sendValidationEmail(savedToken.getUser());
             throw new RuntimeException("Activation token expired : A new token have been sent to your mail");

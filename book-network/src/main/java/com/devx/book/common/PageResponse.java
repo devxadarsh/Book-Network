@@ -1,4 +1,4 @@
-package com.devx.book.book;
+package com.devx.book.common;
 
 import lombok.*;
 

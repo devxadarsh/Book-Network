@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -24,7 +23,7 @@ import java.util.List;
 public class Book extends BaseEntity {
 
     private String title;
-    private String username;
+    private String authorName;
     private String isbn;
     private String synopsys;
     private String bookCover;
@@ -41,6 +40,8 @@ public class Book extends BaseEntity {
 
     @OneToMany(mappedBy = "book")
     private List<BookTransactionHistory> histories;
+
+    private Double rate;
 
     // Added the code into the baseEntity class because it common in the book and feedback
     // Here we use the inheritance property to use the repetitive codes

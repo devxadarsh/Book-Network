@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Function;
 
 @Service
@@ -179,5 +180,17 @@ public class BookService {
                 page.isFirst(),
                 page.isLast()
         );
+    }
+
+    public Integer updateSharableStatus(Integer bookId, Authentication connectedUser) {
+        Book book = bookRepository.findById(bookId).orElseThrow(
+                () -> new EntityNotFoundException("Book not found with id: " + bookId)
+        );
+        User user = ((User) connectedUser.getPrincipal());
+        if (!Objects.equals(book.getOwner().getId(), user.getId())){
+            throw new OperationNotPermittedException("You can not update the other's book status")
+        }
+
+        return null;
     }
 }

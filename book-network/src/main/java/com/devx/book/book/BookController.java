@@ -62,12 +62,11 @@ public class BookController {
         return ResponseEntity.ok(bookService.findAllReturnedBooks(page, size, connectedUser));
     }
 
-    @GetMapping("/retur")
-    public ResponseEntity<PageResponse<BorrowedBookResponse>> findAllReturnedBooksss (
-            @RequestParam(name = "page", defaultValue = "0", required = false) int page,
-            @RequestParam(name = "size", defaultValue = "10", required = false) int size,
+    @PatchMapping("/sharable/{book-id}")
+    public ResponseEntity<Integer> updateSharableStatus(
+            @RequestParam(name = "book-id") Integer bookId,
             Authentication connectedUser
     ) {
-        return ResponseEntity.ok(bookService.findAllReturnedBooks(page, size, connectedUser));
+        return ResponseEntity.ok(bookService.updateSharableStatus(bookId, connectedUser));
     }
 }

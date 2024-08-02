@@ -1,6 +1,7 @@
 package com.devx.book.book;
 
 import com.devx.book.common.PageResponse;
+import com.devx.book.exception.OperationNotPermittedException;
 import com.devx.book.history.BookTransactionHistory;
 import com.devx.book.history.BookTransactionHistoryRepository;
 import com.devx.book.user.User;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -188,9 +190,43 @@ public class BookService {
         );
         User user = ((User) connectedUser.getPrincipal());
         if (!Objects.equals(book.getOwner().getId(), user.getId())){
-            throw new OperationNotPermittedException("You can not update the other's book status")
+            throw new OperationNotPermittedException("You can not update the other's book status");
         }
+        book.setSharable(!book.isSharable());
+        return bookRepository.save(book).getId();
+    }
 
-        return null;
+    public Integer updateArchivedStatus(Integer bookId, Authentication connectedUser) {
+        Book book = bookRepository.findById(bookId).orElseThrow(
+                () -> new EntityNotFoundException("Book not found with id: " + bookId)
+        );
+        User user = ((User) connectedUser.getPrincipal());
+        if (!Objects.equals(book.getOwner().getId(), user.getId())) {
+            throw new OperationNotPermittedException("You can not archive other's own book");
+        }
+        book.setArchived(!book.isArchived());
+        return bookRepository.save(book).getId();
+    }
+
+    public Integer borrowBook(Integer bookId, Authentication connectedUser) {
+        Book book = bookRepository.findById(bookId).orElseThrow(
+                () -> new EntityNotFoundException("Book not found with id: " + bookId)
+        );
+        User user = ((User) connectedUser.getPrincipal());
+        if(Objects.equals(book.getOwner().getId(), user.getId())){
+            throw new OperationNotPermittedException("You can not borrow your own book");
+        }
+        final boolean isAlreadyBorrowedByUser = bookTransactionHistoryRepository.isAlreadyBorrowedByUser(bookId, user.getId());
+        if (isAlreadyBorrowedByUser) {
+            throw new OperationNotPermittedException(("The requested book is already borrowed"));
+        }
+        BookTransactionHistory bookTransactionHistory = BookTransactionHistory
+                .builder()
+                .user(user)
+                .book(book)
+                .returnApproved(false)
+                .returned(false)
+                .build();
+        return bookTransactionHistoryRepository.save(bookTransactionHistory).getId();
     }
 }

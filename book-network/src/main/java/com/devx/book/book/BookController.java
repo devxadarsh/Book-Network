@@ -69,4 +69,20 @@ public class BookController {
     ) {
         return ResponseEntity.ok(bookService.updateSharableStatus(bookId, connectedUser));
     }
+
+    @PatchMapping("/archived/{book-id}")
+    public ResponseEntity<Integer> updateArchivedStatus(
+            @RequestParam(name = "book-id") Integer bookId,
+            Authentication connectedUser
+    ) {
+        return ResponseEntity.ok(bookService.updateArchivedStatus(bookId, connectedUser));
+    }
+
+    @PostMapping("/borrow/{book-id}")
+    public ResponseEntity<Integer> borrowBook(
+            @RequestParam(name = "book-id") Integer bookId,
+            Authentication connectedUser
+    ) {
+        return ResponseEntity.ok(bookService.borrowBook(bookId, connectedUser));
+    }
 }

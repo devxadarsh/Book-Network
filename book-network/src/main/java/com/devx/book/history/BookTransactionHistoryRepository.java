@@ -36,4 +36,6 @@ public interface BookTransactionHistoryRepository extends JpaRepository<BookTran
             and history.returnedApproved :false
             """)
     boolean isAlreadyBorrowedByUser(Integer bookId, Integer id);
+
+    BookTransactionHistory findByBookIdAndUserId(Integer bookId, Integer id);
 }

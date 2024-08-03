@@ -16,8 +16,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 
@@ -184,6 +187,24 @@ public class BookService {
         );
     }
 
+    /**
+     *
+     * @param bookId
+     * @param connectedUser
+     * @return
+     */
+    public Map<Book, User> bookUserMapChecker(Integer bookId, Authentication connectedUser) {
+        Book book = bookRepository.findById(bookId).orElseThrow(
+                () -> new EntityNotFoundException("Book not found with id: " + bookId)
+        );
+        User user = ((User) connectedUser.getPrincipal());
+        Map<Book, User> bookUserMap = new HashMap<>();
+        bookUserMap.put(book, user);
+        return bookUserMap;
+    }
+
+
+
     public Integer updateSharableStatus(Integer bookId, Authentication connectedUser) {
         Book book = bookRepository.findById(bookId).orElseThrow(
                 () -> new EntityNotFoundException("Book not found with id: " + bookId)
@@ -228,5 +249,27 @@ public class BookService {
                 .returned(false)
                 .build();
         return bookTransactionHistoryRepository.save(bookTransactionHistory).getId();
+    }
+
+
+
+    public Integer returnBorrowedBook(Integer bookId, Authentication connectedUser) {
+        Book book = bookRepository.findById(bookId).orElseThrow(
+                () -> new EntityNotFoundException("Book not found with id: " + bookId)
+        );
+        User user = ((User) connectedUser.getPrincipal());
+        if (Objects.equals(book.getOwner().getId(), user.getId())) {
+            throw new OperationNotPermittedException("You can not return your own book");
+        }
+        BookTransactionHistory bookTransactionHistory = bookTransactionHistoryRepository.findByBookIdAndUserId(bookId, user.getId());
+        return null;
+    }
+
+    public Integer approveReturnBorrowedBook(Integer bookId, Authentication connectedUser) {
+        return null;
+    }
+
+    public void uploadBookCoverPicture(MultipartFile file, Authentication connectedUser, Integer bookId) {
+
     }
 }

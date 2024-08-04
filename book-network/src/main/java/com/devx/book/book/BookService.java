@@ -258,15 +258,34 @@ public class BookService {
                 () -> new EntityNotFoundException("Book not found with id: " + bookId)
         );
         User user = ((User) connectedUser.getPrincipal());
+        if (book.isArchived() || !book.isSharable()) {
+            throw new OperationNotPermittedException("The requested book is archived or not shareable");
+        }
         if (Objects.equals(book.getOwner().getId(), user.getId())) {
             throw new OperationNotPermittedException("You can not return your own book");
         }
-        BookTransactionHistory bookTransactionHistory = bookTransactionHistoryRepository.findByBookIdAndUserId(bookId, user.getId());
-        return null;
+        BookTransactionHistory bookTransactionHistory = bookTransactionHistoryRepository.findByBookIdAndUserId(bookId, user.getId())
+                .orElseThrow(
+                        () -> new OperationNotPermittedException("You did not borrowed this book")
+                );
+        bookTransactionHistory.setReturned(true);
+        return bookTransactionHistoryRepository.save(bookTransactionHistory).getId();
     }
 
     public Integer approveReturnBorrowedBook(Integer bookId, Authentication connectedUser) {
-        return null;
+        Book book = bookRepository.findById(bookId).orElseThrow(
+                () -> new EntityNotFoundException("Book not found with id: " + bookId)
+        );
+        User user = ((User) connectedUser.getPrincipal());
+        if (!Objects.equals(book.getOwner().getId(), user.getId())) {
+            throw new OperationNotPermittedException("You can not approve the return of a book you do not own");
+        }
+        BookTransactionHistory bookTransactionHistory = bookTransactionHistoryRepository.findByBookIdAndOwnerId(bookId, connectedUser)
+                .orElseThrow(
+                        () -> new OperationNotPermittedException("The book is not returned yet, you can not approve its return")
+                );
+        bookTransactionHistory.setReturnApproved(true);
+        return bookTransactionHistoryRepository.save(bookTransactionHistory).getId();
     }
 
     public void uploadBookCoverPicture(MultipartFile file, Authentication connectedUser, Integer bookId) {

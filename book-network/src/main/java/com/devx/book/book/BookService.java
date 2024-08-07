@@ -95,7 +95,7 @@ public class BookService {
 
         User user = ((User) connectedUser.getPrincipal());
         Pageable pageable = PageRequest.of(page, size, Sort.by("createdBy").descending());
-        Page<BookTransactionHistory> allBorrowedBooks = bookTransactionHistoryRepository.findAllBorrowedBooks(user.getBooks(), pageable);
+        Page<BookTransactionHistory> allBorrowedBooks = bookTransactionHistoryRepository.findAllBorrowedBooks(user.getId(), pageable);
 //        List<BorrowedBookResponse> bookResponses = allBorrowedBooks.stream()
 //                .map(bookMapper::toBorrowedBookResponse).toList();
 //        return new PageResponse<>(
@@ -117,7 +117,7 @@ public class BookService {
     public PageResponse<BorrowedBookResponse> findAllReturnedBooks(int page, int size, Authentication connectedUser) {
         User user = ((User) connectedUser.getPrincipal());
         Pageable pageable = PageRequest.of(page, size, Sort.by("createdBy").descending());
-        Page<BookTransactionHistory> allBorrowedBooks = bookTransactionHistoryRepository.findAllReturnedBooks(user.getBooks(), pageable);
+        Page<BookTransactionHistory> allBorrowedBooks = bookTransactionHistoryRepository.findAllReturnedBooks(user.getId(), pageable);
 //        List<BorrowedBookResponse> bookResponses = allBorrowedBooks.stream()
 //                .map(bookMapper::toBorrowedBookResponse).toList();
 //        return new PageResponse<>(
@@ -281,7 +281,7 @@ public class BookService {
         if (!Objects.equals(book.getOwner().getId(), user.getId())) {
             throw new OperationNotPermittedException("You can not approve the return of a book you do not own");
         }
-        BookTransactionHistory bookTransactionHistory = bookTransactionHistoryRepository.findByBookIdAndOwnerId(bookId, connectedUser)
+        BookTransactionHistory bookTransactionHistory = bookTransactionHistoryRepository.findByBookIdAndOwnerId(bookId, user.getId())
                 .orElseThrow(
                         () -> new OperationNotPermittedException("The book is not returned yet, you can not approve its return")
                 );

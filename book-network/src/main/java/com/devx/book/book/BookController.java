@@ -19,14 +19,29 @@ public class BookController {
 
     private BookService bookService;
 
+//    @PostMapping
+//    public ResponseEntity<Integer> saveBook(@Valid @RequestBody BookRequest request, Authentication connectedUser) {
+//        return ResponseEntity.ok(bookService.save(request, connectedUser));
+//    }
+//
+//    @GetMapping("/{book_id}")
+//    public ResponseEntity<BookResponse> findBookById( @PathVariable("book_id") Integer BookId, Authentication connectedUser) {
+//        return ResponseEntity.ok(bookService.findById(BookId, connectedUser));
+//    }
+
     @PostMapping
-    public ResponseEntity<Integer> saveBook(@RequestBody @Valid BookRequest request, Authentication connectedUser) {
+    public ResponseEntity<Integer> saveBook(
+            @Valid @RequestBody BookRequest request,
+            Authentication connectedUser
+    ) {
         return ResponseEntity.ok(bookService.save(request, connectedUser));
     }
 
-    @GetMapping("/{book_id}")
-    public ResponseEntity<BookResponse> findBookById( @PathVariable("book_id") Integer BookId, Authentication connectedUser) {
-        return ResponseEntity.ok(bookService.findById(BookId, connectedUser));
+    @GetMapping("/{book-id}")
+    public ResponseEntity<BookResponse> findBookById(
+            @PathVariable("book-id") Integer bookId
+    ) {
+        return ResponseEntity.ok(bookService.findById(bookId));
     }
 
     @GetMapping

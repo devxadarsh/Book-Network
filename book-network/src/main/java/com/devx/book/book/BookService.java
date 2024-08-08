@@ -42,8 +42,9 @@ public class BookService {
         return bookRepository.save(book).getId();
     }
 
-    public BookResponse findById(Integer bookId, Authentication connectedUser) {
-        User user = ((User) connectedUser.getPrincipal());
+//    public BookResponse findById(Integer bookId, Authentication connectedUser) {
+    public BookResponse findById(Integer bookId) {
+//        User user = ((User) connectedUser.getPrincipal());
         return bookRepository.findById(bookId)
                 .map(bookMapper::toBookResponse)
                 .orElseThrow( () -> new EntityNotFoundException("No book found with Id: " + bookId));

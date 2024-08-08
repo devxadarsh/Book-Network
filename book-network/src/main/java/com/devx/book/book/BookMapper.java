@@ -9,12 +9,12 @@ public class BookMapper {
 
     public Book toBook( BookRequest request ) {
         return Book.builder()
-                .id(request.id)
-                .title(request.title)
-                .authorName(request.authorName)
-                .isbn(request.isbn)
-                .synopsys(request.synopsis)
-                .sharable(request.sharable)
+                .id(request.id())
+                .title(request.title())
+                .authorName(request.authorName())
+                .isbn(request.isbn())
+                .synopsys(request.synopsis())
+                .sharable(request.sharable())
                 .build();
     }
 

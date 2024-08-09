@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f96dbd-f12b-4b90-bae3-ae00fb5dbdc7" name="Changes" comment="updated book controller">
-      <change afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/config/OpenApiConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/user/UserRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

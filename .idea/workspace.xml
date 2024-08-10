@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f96dbd-f12b-4b90-bae3-ae00fb5dbdc7" name="Changes" comment="updated book controller">
+      <change afterPath="$PROJECT_DIR$/book-network-ui/src/app/pages/register/register.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-ui/src/app/pages/register/register.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-ui/src/app/pages/register/register.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-ui/src/app/pages/register/register.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-ui/src/app/services/token/token.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-network-ui/src/app/services/token/token.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/app.routes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/pages/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/pages/login/login.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-network-ui/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/styles.scss" afterDir="false" />

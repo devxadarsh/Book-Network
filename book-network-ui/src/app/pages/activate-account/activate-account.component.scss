@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.acitvation-message, .acitvation-error {
+    text-align: center;
+}
+
+.acitvation-error{
+    color: red;
+}

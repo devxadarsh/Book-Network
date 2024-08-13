@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f96dbd-f12b-4b90-bae3-ae00fb5dbdc7" name="Changes" comment="updated book controller">
+    <list default="true" id="d1f96dbd-f12b-4b90-bae3-ae00fb5dbdc7" name="Changes" comment="Implemented the activate-account module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/pages/activate-account/activate-account.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/pages/activate-account/activate-account.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/pages/activate-account/activate-account.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/pages/activate-account/activate-account.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/pages/activate-account/activate-account.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/pages/activate-account/activate-account.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723313332501</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implemented the activate-account module">
+      <option name="closed" value="true" />
+      <created>1723486643462</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723486643462</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +150,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Removed unused imports" />
     <MESSAGE value="updated book controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated book controller" />
+    <MESSAGE value="Implemented the activate-account module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented the activate-account module" />
   </component>
 </project>

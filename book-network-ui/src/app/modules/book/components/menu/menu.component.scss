@@ -1,0 +1,24 @@
+// li > a {
+//     &:hover{
+//         background-color: rgb(180, 208, 248);
+//         border-radius: 5px;
+//         text-decoration: underline;
+//     }
+//     &.active{
+//         color:rgba(23, 23, 211, 0.8);
+//         border-radius: 5px;
+//     }
+// }
+
+.navbar-nav .nav-item .nav-link {
+    &:hover {
+        background-color: rgb(180, 208, 248);
+        border-radius: 5px;
+        text-decoration: underline;
+    }
+    &.active {
+        color: rgba(23, 23, 211, 0.8) !important;
+        border-radius: 5px;
+    }
+}
+

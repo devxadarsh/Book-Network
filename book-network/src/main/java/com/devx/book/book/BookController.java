@@ -17,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Tag(name = "Book")
 public class BookController {
 
-    private BookService bookService;
+    private final BookService bookService;
 
 //    @PostMapping
 //    public ResponseEntity<Integer> saveBook(@Valid @RequestBody BookRequest request, Authentication connectedUser) {
@@ -50,7 +50,8 @@ public class BookController {
             @RequestParam(name = "size", defaultValue = "10", required = false) int size,
             Authentication connectedUser
     ) {
-        return ResponseEntity.ok(bookService.findAllBooks(page, size, connectedUser));
+        return ResponseEntity.ok(bookService.
+                findAllBooks(page, size, connectedUser));
     }
 
     @GetMapping("/owner")

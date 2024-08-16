@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d1f96dbd-f12b-4b90-bae3-ae00fb5dbdc7" name="Changes" comment="Implemented the boot module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/components/book-card/book-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/components/book-card/book-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/components/book-card/book-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/components/book-card/book-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/pages/book-list/book-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/pages/book-list/book-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/pages/book-list/book-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/pages/book-list/book-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/security/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/security/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,5 +167,20 @@
     <MESSAGE value="Implemented the activate-account module" />
     <MESSAGE value="Implemented the boot module" />
     <option name="LAST_COMMIT_MESSAGE" value="Implemented the boot module" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/book-network/src/main/java/com/devx/book/book/BookRepository.java</url>
+          <line>20</line>
+          <properties class="com.devx.book.book.BookRepository" method="findAllDisplayableBooks">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

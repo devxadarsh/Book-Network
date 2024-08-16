@@ -15,7 +15,7 @@ import { BookCardComponent } from "../../components/book-card/book-card.componen
 export class BookListComponent implements OnInit{
   bookResponse: PageResponseBookResponse = {};
   page: number = 0;
-  size: number = 5;
+  size: number = 10;
   title: string = '';
 
   constructor(
@@ -30,6 +30,7 @@ export class BookListComponent implements OnInit{
     }).subscribe({
       next: (books) => {
         this.bookResponse = books;
+        console.log(books)
       }
     })
   }

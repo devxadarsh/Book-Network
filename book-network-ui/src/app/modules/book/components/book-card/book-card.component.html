@@ -1,1 +1,17 @@
-<p>book-card works!</p>
+<div class="card" style="width: 20rem;">
+    <img height="200" [src]="bookCover" alt="...">
+    <div class="card-body overflow-scroll">
+        <h5 class="card-title fs-6 text-nowrap fw-bold mb-1">
+            <i class="fa-solid fa-book ">&nbsp;{{book.title}} </i>
+        </h5>
+        <h5 class="card-subtitle fs-6 text-secondary mb-1">
+            <i class="fa-solid fa-user-check ">&nbsp;{{book.authorName}} </i>
+        </h5>
+        <h6 class="card-title fs-6 text-secondary mb-1">
+            <i class="fa-solid fa-code ">&nbsp;{{book.isbn}} </i>
+        </h6>
+        <h6 class="card-title fs-6 text-secondary">
+            <i class="fa-solid fa-user ">&nbsp;{{book.owner}} </i>
+        </h6>
+    </div>
+</div>

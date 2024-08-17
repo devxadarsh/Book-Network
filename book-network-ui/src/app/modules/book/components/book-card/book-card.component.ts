@@ -1,15 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { BookResponse } from '../../../../services/models';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-book-card',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './book-card.component.html',
-  styleUrl: './book-card.component.scss'
+  styleUrl: './book-card.component.scss',
 })
 export class BookCardComponent {
-
   private _book: BookResponse = {};
 
   get book(): BookResponse {
@@ -31,4 +31,14 @@ export class BookCardComponent {
     return 'https://i0.wp.com/christianlydemann.com/wp-content/uploads/2024/05/Angular-Mastery.png?w=1410&ssl=1';
   }
 
+  private _manage: boolean = false;
+
+  get manage(): boolean {
+    return this._manage;
+  }
+
+  @Input()
+  set manage(value: boolean) {
+    this._manage = value;
+  }
 }

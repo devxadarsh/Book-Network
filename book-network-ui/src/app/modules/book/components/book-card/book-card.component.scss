@@ -1,0 +1,21 @@
+i {
+    cursor: pointer;
+    // transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+    // transition: all 0.3s ease;
+}
+
+i:active {
+    transform: scale(0.9);
+    /* Shrink slightly */
+
+    // color: red;
+    /* Change color to red */
+}
+
+div {
+    &.card {
+        max-height: 450px;
+        min-height: 450px;
+    }
+}

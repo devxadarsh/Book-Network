@@ -38,16 +38,18 @@ public class JwtFilter extends OncePerRequestFilter {
         }
         final String authHeader = request.getHeader("Authorization");
 //        final String authHeader = request.getHeader(AUTHORIZATION);
-        final String jwt;
-        final String userEmail;
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            filterChain.doFilter(request, response);
-            return;
-        }
+//        final String jwt;
+//        final String userEmail;
+//        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+//            filterChain.doFilter(request, response);
+//            return;
+//        }
 //        jwt = authHeader.substring(7);
 //        userEmail = jwtService.extractServiceUsername(jwt);
         
         // test code started
+        String jwt = null;
+        String userEmail = null;
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             jwt = authHeader.substring(7);
             try {

@@ -109,6 +109,59 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/com.sun.media/jai_core &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>com.sun.media</groupId>-->
+<!--			<artifactId>jai_core</artifactId>-->
+<!--			<version>1.1.3</version>-->
+<!--		</dependency>-->
+
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/com.sun/jai_core &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>com.sun</groupId>-->
+<!--			<artifactId>jai_core</artifactId>-->
+<!--			<version>1.1.3</version>-->
+<!--		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/com.github.jai-imageio/jai-imageio-core -->
+		<dependency>
+			<groupId>com.github.jai-imageio</groupId>
+			<artifactId>jai-imageio-core</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.media/jai_core -->
+		<dependency>
+			<groupId>javax.media</groupId>
+			<artifactId>jai_core</artifactId>
+			<version>1.1.3</version>
+		</dependency>
+
+
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/javax.media/jai-codec &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>javax.media</groupId>-->
+<!--			<artifactId>jai-codec</artifactId>-->
+<!--			<version>1.1.3</version>-->
+<!--		</dependency>-->
+
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/javax.media/jai-core &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>javax.media</groupId>-->
+<!--			<artifactId>jai-core</artifactId>-->
+<!--			<version>1.1.3</version>-->
+<!--		</dependency>-->
+
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/javax.media/jai_codec &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>javax.media</groupId>-->
+<!--			<artifactId>jai_codec</artifactId>-->
+<!--			<version>1.1.3</version>-->
+<!--		</dependency>-->
+
+
+
 	</dependencies>
 
 	<build>

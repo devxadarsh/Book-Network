@@ -1,29 +1,39 @@
-<div class="container" *ngIf="subbmitted else codeForm">
-    <div class="acitvation-message" *ngIf="isOkay; else activationError">
-        <h2>Activation Successfull!</h2>
-        <p>Your account has been activated successfully</p>
-        <button class="btn btn-primary" (click)="redirectToLogin()">Go to Login</button>
-    </div>
+<div class="container" *ngIf="subbmitted; else codeForm">
+  <div class="acitvation-message" *ngIf="isOkay; else activationError">
+    <h2>Activation Successfull!</h2>
+    <p>Your account has been activated successfully</p>
+    <button class="btn btn-primary" (click)="redirectToLogin()">
+      Go to Login
+    </button>
+  </div>
 
-    <ng-template #activationError>
-        <div class="acitvation-error">
-            <h2>Activation Failed!</h2>
-            <p>{{ message }}</p>
-            <button class="btn btn-primary" (click)="subbmitted = false">Try Again</button>
-        </div>
-        <button class="bt"></button>
-    </ng-template>
+  <ng-template #activationError>
+    <div class="acitvation-error">
+      <h2>Activation Failed!</h2>
+      <p>{{ message }}</p>
+      <button class="btn btn-primary" (click)="subbmitted = false">
+        Try Again
+      </button>
+    </div>
+    <button class="bt"></button>
+  </ng-template>
 </div>
-<div ></div>
+<div></div>
 
 <ng-template #codeForm>
-    <div class="container">
-        <div class="text-center" style="width: 400px;">
-            <h2>Type your Activation Code</h2>
-            <code-input [isCodeHidden]="false" [codeLength]="6" [code]="'number'"
-                (codeCompleted)="onCodeCompleted($event)">
-            </code-input>
-            <button class="btn btn-primary mb-3" (click)="redirectToLogin()">Go to Login</button>
-        </div>
+  <div class="container">
+    <div class="text-center" style="width: 400px">
+      <h2>Type your Activation Code</h2>
+      <code-input
+        [isCodeHidden]="false"
+        [codeLength]="6"
+        [code]="'number'"
+        (codeCompleted)="onCodeCompleted($event)"
+      >
+      </code-input>
+      <button class="btn btn-primary mt-3" (click)="redirectToLogin()">
+        Go to Login
+      </button>
     </div>
+  </div>
 </ng-template>

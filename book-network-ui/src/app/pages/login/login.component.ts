@@ -11,18 +11,17 @@ import { TokenService } from '../../services/token/token.service';
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-
-  authRequest: AuthenticationRequest = { email: '', password: '' }
+  authRequest: AuthenticationRequest = { email: '', password: '' };
   errorMsg: Array<string> = [];
 
   constructor(
     private router: Router,
     private authService: AuthenticationService,
     private tokenService: TokenService
-  ) { }
+  ) {}
 
   login() {
     this.errorMsg = [];
@@ -36,14 +35,13 @@ export class LoginComponent {
         if (err.error.validationError) {
           this.errorMsg = err.error.validationError;
         } else {
-          this.errorMsg.push(err.error.errorMsg);
+          this.errorMsg.push(err.error.error);
         }
-      }
-    })
+      },
+    });
   }
 
   register() {
-    this.router.navigate(['/register'])
+    this.router.navigate(['/register']);
   }
-
 }

@@ -41,14 +41,33 @@ export const httpTokenInterceptor: HttpInterceptorFn = (req, next) => {
     });
   }
 
-  // Proceed with the request and handle potential errors
+  // // Proceed with the request and handle potential errors
+  // return next(authReq).pipe(
+  //   catchError((error: HttpErrorResponse) => {
+  //     if (error.status === 401 && ) {
+  //       // Token is expired or invalid, redirect to the login page
+  //       localStorage.removeItem('token');
+  //       alert('Token is expired or invalid, redirect to the login page');
+  //       router.navigate(['']);
+  //       // window.location.reload();
+  //     }
+  //     return throwError(error);
+  //   })
+  // );
+
   return next(authReq).pipe(
     catchError((error: HttpErrorResponse) => {
-      if (error.status === 401) {
+      // Get the URL of the failed request
+      const failedUrl = req.url;
+      const checkUrl = 'http://localhost:8088/api/v1/auth/authenticate';
+      if (error.status === 401 && failedUrl !== checkUrl) {
         // Token is expired or invalid, redirect to the login page
+        localStorage.removeItem('token');
         alert('Token is expired or invalid, redirect to the login page');
         router.navigate(['']);
       }
+
+      // Re-throw the error to be handled by other parts of the application
       return throwError(error);
     })
   );

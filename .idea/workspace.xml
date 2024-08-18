@@ -6,16 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d1f96dbd-f12b-4b90-bae3-ae00fb5dbdc7" name="Changes" comment="Implemented the boot module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/components/book-card/book-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/components/book-card/book-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/components/book-card/book-card.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/components/book-card/book-card.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/components/book-card/book-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/modules/book/components/book-card/book-card.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/services/interceptor/http-token.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/services/interceptor/http-token.interceptor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/services/services/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/services/services/authentication.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network-ui/src/app/services/token/token.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/book-network-ui/src/app/services/token/token.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-network/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/config/BeansConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/config/BeansConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/security/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/security/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/src/main/java/com/devx/book/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,14 +179,19 @@
           </properties>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/book-network/src/main/java/com/devx/book/security/SecurityConfig.java</url>
-          <line>30</line>
-          <properties class="com.devx.book.security.SecurityConfig" method="securityFilterChain">
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/book-network/src/main/java/com/devx/book/auth/AuthenticationService.java</url>
+          <line>96</line>
+          <properties class="com.devx.book.auth.AuthenticationService" method="authenticate">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/book-network/src/main/java/com/devx/book/auth/AuthenticationService.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -82,7 +82,7 @@ public class AuthenticationService {
     }
 
     private String generateActivationCode(int length) {
-        String characters = "123456789";
+        String characters = "0123456789";
         StringBuilder codeBuilder = new StringBuilder();
         SecureRandom secureRandom = new SecureRandom();
         for (int i = 0; i < length; i++) {

@@ -1,11 +1,12 @@
 import { Component, input, Input } from '@angular/core';
 import { BookResponse } from '../../../../services/models';
 import { CommonModule } from '@angular/common';
+import { RatingComponent } from '../rating/rating.component';
 
 @Component({
   selector: 'app-book-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RatingComponent],
   templateUrl: './book-card.component.html',
   styleUrl: './book-card.component.scss',
 })

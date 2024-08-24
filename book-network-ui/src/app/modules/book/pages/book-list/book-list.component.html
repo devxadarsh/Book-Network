@@ -1,7 +1,18 @@
 <h3>Book List</h3>
+<div
+  *ngIf="message"
+  class="alert"
+  [class.alert-success]="level === 'success'"
+  [class.alert-danger]="level === 'error'"
+>
+  {{ message }}
+</div>
 <hr />
 <div class="d-flex justify-content-start gap-2 flex-wrap">
-  <app-book-card [book]="book" *ngFor="let book of bookResponse.content"
+  <app-book-card
+    *ngFor="let book of bookResponse.content"
+    [book]="book"
+    (borrow)="borrowbook($event)"
     >{{ book.title }}
   </app-book-card>
 </div>
@@ -31,13 +42,17 @@
           <i class="fa-solid fa-angle-left"></i>
         </a>
       </li>
-
-      <li
+      <!-- *************************************** -->
+      <!-- <li
         class="page-item"
         *ngFor="
           let _ of [].constructor(this.bookResponse.totalPage);
           let pageIndex = index
         "
+      > -->
+      <li
+        class="page-item"
+        *ngFor="let pageIndex of getVisiblePages(); let i = index"
       >
         <a
           (click)="goToPage(pageIndex)"
@@ -48,7 +63,7 @@
           {{ pageIndex + 1 }}
         </a>
       </li>
-
+      <!-- *************************************** -->
       <li class="page-item">
         <a
           (click)="goToNextPage()"

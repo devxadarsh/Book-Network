@@ -2,9 +2,13 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../../../services/services';
 import { Router } from '@angular/router';
-import { PageResponseBookResponse } from '../../../../services/models';
+import {
+  BookResponse,
+  PageResponseBookResponse,
+} from '../../../../services/models';
 import { CommonModule } from '@angular/common';
 import { BookCardComponent } from '../../components/book-card/book-card.component';
+import { Event } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
@@ -18,13 +22,30 @@ export class BookListComponent implements OnInit {
 
   bookResponse: PageResponseBookResponse = {};
   page: number = 0;
-  size: number = 2;
+  size: number = 1;
   title: string = '';
+  message: string = '';
+  level: string = 'success';
 
   constructor(private bookService: BookService, private router: Router) {}
 
   ngOnInit(): void {
     this.findAllBooks();
+  }
+
+  getVisiblePages(): number[] {
+    const totalPages = this.bookResponse.totalPage ?? 0;
+    const currentPage = this.page;
+
+    const startPage = Math.max(currentPage - 1, 0);
+    const endPage = Math.min(currentPage + 1, totalPages - 1);
+
+    const pages: number[] = [];
+    for (let i = startPage; i <= endPage; i++) {
+      pages.push(i);
+    }
+
+    return pages;
   }
 
   findAllBooks() {
@@ -53,7 +74,7 @@ export class BookListComponent implements OnInit {
 
   goToPage(page: number) {
     this.page = page;
-    this.findAllBooks;
+    this.findAllBooks();
   }
 
   goToNextPage() {
@@ -68,5 +89,24 @@ export class BookListComponent implements OnInit {
 
   get isLastPage(): boolean {
     return this.page == (this.bookResponse.totalPage as number) - 1;
+  }
+
+  borrowbook(book: BookResponse) {
+    this.message = '';
+    this.bookService
+      .borrowBook({
+        'book-id': book.id as number,
+      })
+      .subscribe({
+        next: () => {
+          this.level = 'success';
+          this.message = 'Book successfully added to your list';
+        },
+        error: (err) => {
+          console.log(err);
+          this.level = 'error';
+          this.message = err.error.error;
+        },
+      });
   }
 }

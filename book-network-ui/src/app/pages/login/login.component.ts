@@ -41,6 +41,13 @@ export class LoginComponent {
     });
   }
 
+  handleKeypress(event: KeyboardEvent) {
+    if (event.key == 'Enter') {
+      event.preventDefault(); // Prevent default form submission if needed
+      this.login();
+    }
+  }
+
   register() {
     this.router.navigate(['/register']);
   }

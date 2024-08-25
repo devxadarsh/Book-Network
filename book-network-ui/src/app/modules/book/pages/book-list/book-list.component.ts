@@ -1,3 +1,4 @@
+import { Event } from '@angular/router';
 // import { FindAllBooks } from './../../../../services/fn/book/find-all-books';
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../../../services/services';
@@ -8,7 +9,6 @@ import {
 } from '../../../../services/models';
 import { CommonModule } from '@angular/common';
 import { BookCardComponent } from '../../components/book-card/book-card.component';
-import { Event } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
@@ -22,7 +22,7 @@ export class BookListComponent implements OnInit {
 
   bookResponse: PageResponseBookResponse = {};
   page: number = 0;
-  size: number = 1;
+  size: number = 3;
   title: string = '';
   message: string = '';
   level: string = 'success';
@@ -92,6 +92,7 @@ export class BookListComponent implements OnInit {
   }
 
   borrowbook(book: BookResponse) {
+    console.log(book);
     this.message = '';
     this.bookService
       .borrowBook({
@@ -109,4 +110,24 @@ export class BookListComponent implements OnInit {
         },
       });
   }
+
+  // borrowbook(event: any) {
+  //   const book = event as BookResponse; // Cast the event to BookResponse
+  //   this.message = '';
+  //   this.bookService
+  //     .borrowBook({
+  //       'book-id': book.id as number,
+  //     })
+  //     .subscribe({
+  //       next: () => {
+  //         this.level = 'success';
+  //         this.message = 'Book successfully added to your list';
+  //       },
+  //       error: (err) => {
+  //         console.log(err);
+  //         this.level = 'error';
+  //         this.message = err.error.error;
+  //       },
+  //     });
+  // }
 }

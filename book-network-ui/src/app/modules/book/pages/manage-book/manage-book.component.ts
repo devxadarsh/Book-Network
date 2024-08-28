@@ -58,7 +58,8 @@ export class ManageBookComponent {
             });
         },
         error: (err) => {
-          this.errorMsg = err.error.validationErrors;
+          console.log(err.error);
+          this.errorMsg = err.error.validationError;
         },
       });
   }

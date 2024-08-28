@@ -41,7 +41,21 @@ public class Book extends BaseEntity {
     @OneToMany(mappedBy = "book")
     private List<BookTransactionHistory> histories;
 
-    private Double rate;
+//    private Double rate;
+    @Transient
+    public double getRate() {
+        if (feedbacks == null || feedbacks.isEmpty()) {
+            return 0.0;
+        }
+        var rate = this.feedbacks.stream()
+                .mapToDouble(Feedback::getNote)
+                .average()
+                .orElse(0.0);
+        double roundedRate = Math.round(rate * 10.0) / 10.0;
+
+        // Return 4.0 if roundedRate is less than 4.5, otherwise return 4.5
+        return roundedRate;
+    }
 
     // Added the code into the baseEntity class because it common in the book and feedback
     // Here we use the inheritance property to use the repetitive codes

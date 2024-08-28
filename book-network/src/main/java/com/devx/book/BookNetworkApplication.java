@@ -11,8 +11,9 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 
 @SpringBootApplication
-@EnableJpaAuditing
+//@EnableJpaAuditing
 @EnableAsync
+@EnableJpaAuditing(auditorAwareRef = "auditorAware")
 public class BookNetworkApplication {
 
 	public static void main(String[] args) {

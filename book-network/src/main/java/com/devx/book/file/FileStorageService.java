@@ -17,7 +17,7 @@ import java.nio.file.Paths;
 @RequiredArgsConstructor
 public class FileStorageService {
 
-    @Value("/{application.file.uploads.photos-output-path}")
+    @Value("${application.file.uploads.photos-output-path}")
     private String fileUploadPath;
 
     public String saveFile(
@@ -29,11 +29,21 @@ public class FileStorageService {
         return uploadFile(sourceFile, fileUploadSubPath);
     }
 
+    private void createDirectoryIfNotExists() {
+        File directory = new File(fileUploadPath);
+        if (!directory.exists()) {
+            if (!directory.mkdirs()) {
+                throw new RuntimeException("Failed to create directory: " + fileUploadPath);
+            }
+        }
+    }
+
     private String uploadFile(@Nonnull MultipartFile sourceFile, @Nonnull String fileUploadSubPath) {
         final String finalUploadPath = fileUploadPath + File.separator + fileUploadSubPath;
         File targetFolder = new File(fileUploadPath);
 
         if (!targetFolder.exists()) {
+//            createDirectoryIfNotExists();
             log.warn("Failed to create the target folder");
             return null;
         }

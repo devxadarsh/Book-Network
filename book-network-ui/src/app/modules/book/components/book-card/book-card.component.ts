@@ -26,7 +26,7 @@ export class BookCardComponent {
 
   get bookCover(): string | undefined {
     if (this.book.cover) {
-      return 'data:image/jpg;base64, ' + this._book.cover;
+      return 'data:image/jpg;base64,' + this._book.cover;
     }
     // return this._bookCover;
     return 'https://i0.wp.com/christianlydemann.com/wp-content/uploads/2024/05/Angular-Mastery.png?w=1410&ssl=1';

@@ -16,17 +16,17 @@ body {
 .bbb {
     padding-bottom: 2px;
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 13px;
     /*line-height: 16px;*/
     /*color: rgb(25, 39, 60);*/
-    color: blue;
+    color: rgb(60, 109, 240);
     font-family: Inter, Arial, Helvetica, Noto Sans Devanagari, Noto Sans CJK SC Thin, Noto Sans SC, Noto Sans Hebrew, sans-serif;
 }
 
 .bbbb {
-    padding-bottom: 2px;
-    margin-bottom: 10px;
-    font-size: 12px;
+    // padding-bottom: 2px;
+    // margin-bottom: 10px;
+    font-size: 11px;
     /*line-height: 16px;*/
     color: rgb(25, 39, 60);
     font-family: Inter, Arial, Helvetica, Noto Sans Devanagari, Noto Sans CJK SC Thin, Noto Sans SC, Noto Sans Hebrew, sans-serif;
@@ -40,18 +40,24 @@ body {
     font-family: Inter, Arial, Helvetica, Noto Sans Devanagari, Noto Sans CJK SC Thin, Noto Sans SC, Noto Sans Hebrew, sans-serif;
 }
 
+.ff {
+    padding-bottom: 2px;
+    // margin-bottom: 5px;
+    font-family: Inter, Arial, Helvetica, Noto Sans Devanagari, Noto Sans CJK SC Thin, Noto Sans SC, Noto Sans Hebrew, sans-serif;
+}
+
 .underlined-text {
     display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-bottom: 1px solid gray;
     margin-right: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     padding-bottom: 4px;
 
     font-family: Inter, Arial, Helvetica, Noto Sans Devanagari, Noto Sans CJK SC Thin, Noto Sans SC, Noto Sans Hebrew, sans-serif;
-    font-size: 13px;
-    line-height: 16px;
+    font-size: 12px;
+    line-height: 14px;
     color: rgb(25, 39, 60);
 }
 
@@ -63,10 +69,24 @@ body {
     box-sizing: border-box;
 }
 
+.container1 {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
 .right-aligned-div {
     width: 40%;
     /*background-color: #f0f0f0;*/
     // padding: 10px;
+}
+
+/* Style for editable areas when they are being edited */
+.editable:focus {
+    outline: none;
+    /* Remove default focus outline */
+    border: none;
+    /* Remove border when focused */
 }
 
 left-side {
@@ -91,9 +111,9 @@ right-side {
 
 /**********************************************/
 .a4-template {
-    width: 280mm;
+    width: 210mm;
     /* A4 width */
-    height: 396mm;
+    height: 296mm;
     /* A4 height */
     margin: auto;
     padding: 10mm;

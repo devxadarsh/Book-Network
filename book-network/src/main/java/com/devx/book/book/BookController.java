@@ -6,6 +6,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 //import org.hibernate.annotations.Parameter;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class BookController {
 
     private final BookService bookService;
+    private final PdfService pdfService;
 
 //    @PostMapping
 //    public ResponseEntity<Integer> saveBook(@Valid @RequestBody BookRequest request, Authentication connectedUser) {
@@ -130,5 +133,14 @@ public class BookController {
     ) {
         bookService.uploadBookCoverPicture(file, connectedUser, bookId);
         return ResponseEntity.accepted().build();
+    }
+
+    @GetMapping("/resume/download")
+    public ResponseEntity<InputStreamResource> downloadPdf() {
+        try {
+            return pdfService.generatePdf();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 }

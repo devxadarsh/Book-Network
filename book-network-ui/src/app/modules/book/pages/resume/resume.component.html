@@ -4,34 +4,78 @@
     <title>Create Resume!</title>
   </head>
   <body>
-    <!-- <div class="a4-template">
-      <header class="text-center mb-4">
-        <h1><i class="fa fa-file-text"></i> A4 Template</h1>
-      </header>
+    <div class="a4-template" id="contentToExport">
+      <div class="container1 mb-3">
+        <div
+          class="ff editable"
+          style="
+            text-transform: uppercase;
+            color: rgb(25, 39, 60);
+            font-size: 28px;
+            line-height: 1;
+          "
+          contenteditable="true"
+        >
+          Adarsh Pandey
+        </div>
+        <div
+          class="ff editable mb-0"
+          style="color: rgb(60, 109, 240); font-size: 14px"
+          contenteditable="true"
+        >
+          Backend Software Developer
+        </div>
+        <div class="d-flex gap-2 show-area align-items-center">
+          <div class="d-flex align-items-center" style="font-size: 10px">
+            <i
+              class="fas fa-phone"
+              style="font-size: 8px; color: rgb(185, 185, 185)"
+            ></i>
+            <div contenteditable="true">&nbsp;+91&nbsp;7080018060</div>
+          </div>
 
-      <section class="content">
-        <h2>Section Title</h2>
-        <p>
-          This is a paragraph of text inside the A4 template. Use Bootstrap and
-          Font Awesome as needed.
-        </p>
-        <button class="btn btn-primary">
-          <i class="fa fa-download"></i> Download
-        </button>
-      </section>
+          <div class="d-flex align-items-center" style="font-size: 10px">
+            <i
+              class="fas fa-at"
+              style="font-size: 8px; color: rgb(185, 185, 185)"
+            ></i>
+            <div contenteditable="true">&nbsp;devxadarsh&#64;gmail.com</div>
+          </div>
 
-      <footer class="text-center mt-4">
-        <p>&copy; 2024 Your Company</p>
-      </footer>
-    </div> -->
+          <div class="d-flex align-items-center" style="font-size: 10px">
+            <i
+              class="fas fa-link"
+              style="font-size: 8px; color: rgb(185, 185, 185)"
+            ></i>
+            <div contenteditable="true">
+              &nbsp;https://www.linkedin.com/in/devxadarsh
+            </div>
+          </div>
 
-    <div class="a4-template">
-      <div class="container d-flex justify-content-between">
-        <div style="width: 55%">
+          <div
+            class="d-flex align-items-center editable"
+            style="font-size: 10px"
+          >
+            <i
+              class="fas fa-location-dot"
+              style="font-size: 8px; color: rgb(185, 185, 185)"
+            ></i>
+            <div contenteditable="true">&nbsp;Noida, Sector 62</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container justify-content-between">
+        <div style="width: 58%">
           <div>
             <div>
-              <div class="bb" style="font-size: 16px; color: gray">SUMMARY</div>
-              <div class="show-area bbbb">
+              <div
+                class="bb text-uppercase"
+                style="font-size: 14px; color: gray"
+              >
+                SUMMARY
+              </div>
+              <div class="show-area bbbb editable" contenteditable="true">
                 Highly skilled Java Developer with almost 1.6 years of
                 experience in Spring Boot and Master's degree in Computer
                 Applications. Designing, developing, and implementing software
@@ -44,17 +88,24 @@
               </div>
             </div>
 
-            <div style="margin-top: 30px">
+            <div style="margin-top: 15px">
               <div>
-                <div class="bb" style="font-size: 16px; color: gray">
+                <div
+                  class="bb text-uppercase"
+                  style="font-size: 14px; color: gray"
+                >
                   PROFESSIONAL EXPERIENCE
                 </div>
-                <div class="show-area">
-                  <span style="font-size: 16px; color: rgb(25, 39, 60)"
+                <div class="show-area editable" contenteditable="true">
+                  <span style="font-size: 14px; color: rgb(25, 39, 60)"
                     >Backend Developer (Job Application)</span
                   >
                   <br />
                   <span class="bbb">Java Springboot ,MicroServices, OOPS</span>
+                  <br />
+                  <span class="ff" style="font-size: 13px"
+                    >Some highlights of my skills and accomplishments:</span
+                  >
 
                   <div class="d-flex">
                     <div>
@@ -63,12 +114,10 @@
                         style="font-size: 3px"
                       ></span>
                     </div>
-                    <div>
-                      <span class="bbbb"
-                        >Implemented Postman collections for organizing and
-                        executing API test suites efficiently in Spring Boot
-                        projects, facilitating seamless testing workflows.</span
-                      >
+                    <div class="bbbb">
+                      Implemented Postman collections for organizing and
+                      executing API test suites efficiently in Spring Boot
+                      projects, facilitating seamless testing workflows.
                     </div>
                   </div>
 
@@ -79,12 +128,10 @@
                         style="font-size: 3px"
                       ></span>
                     </div>
-                    <div>
-                      <span class="bbbb"
-                        >Implemented Postman collections for organizing and
-                        executing API test suites efficiently in Spring Boot
-                        projects, facilitating seamless testing workflows.</span
-                      >
+                    <div class="bbbb">
+                      Implemented Postman collections for organizing and
+                      executing API test suites efficiently in Spring Boot
+                      projects, facilitating seamless testing workflows.
                     </div>
                   </div>
 
@@ -95,18 +142,16 @@
                         style="font-size: 3px"
                       ></span>
                     </div>
-                    <div>
-                      <span class="bbbb"
-                        >Implemented Postman collections for organizing and
-                        executing API test suites efficiently in Spring Boot
-                        projects, facilitating seamless testing workflows.</span
-                      >
+                    <div class="bbbb">
+                      Implemented Postman collections for organizing and
+                      executing API test suites efficiently in Spring Boot
+                      projects, facilitating seamless testing workflows.
                     </div>
                   </div>
                 </div>
 
-                <div class="show-area">
-                  <span style="font-size: 16px; color: rgb(25, 39, 60)"
+                <div class="show-area editable" contenteditable="true">
+                  <span style="font-size: 14px; color: rgb(25, 39, 60)"
                     >CipherPay</span
                   >
                   <br />
@@ -120,12 +165,10 @@
                         style="font-size: 3px"
                       ></span>
                     </div>
-                    <div>
-                      <span class="bbbb"
-                        >Implemented Postman collections for organizing and
-                        executing API test suites efficiently in Spring Boot
-                        projects, facilitating seamless testing workflows.</span
-                      >
+                    <div class="bbbb">
+                      Implemented Postman collections for organizing and
+                      executing API test suites efficiently in Spring Boot
+                      projects, facilitating seamless testing workflows.
                     </div>
                   </div>
 
@@ -136,12 +179,10 @@
                         style="font-size: 3px"
                       ></span>
                     </div>
-                    <div>
-                      <span class="bbbb"
-                        >Implemented Postman collections for organizing and
-                        executing API test suites efficiently in Spring Boot
-                        projects, facilitating seamless testing workflows.</span
-                      >
+                    <div class="bbbb">
+                      Implemented Postman collections for organizing and
+                      executing API test suites efficiently in Spring Boot
+                      projects, facilitating seamless testing workflows.
                     </div>
                   </div>
 
@@ -152,12 +193,10 @@
                         style="font-size: 3px"
                       ></span>
                     </div>
-                    <div>
-                      <span class="bbbb"
-                        >Implemented Postman collections for organizing and
-                        executing API test suites efficiently in Spring Boot
-                        projects, facilitating seamless testing workflows.</span
-                      >
+                    <div class="bbbb">
+                      Implemented Postman collections for organizing and
+                      executing API test suites efficiently in Spring Boot
+                      projects, facilitating seamless testing workflows.
                     </div>
                   </div>
                 </div>
@@ -165,64 +204,206 @@
             </div>
 
             <div style="margin-top: 30px">
-              <div>
-                <div class="bb" style="font-size: 16px; color: gray">
-                  PROFESSIONAL EXPERIENCE
+              <div class="bb" style="font-size: 14px; color: gray">
+                PROFESSIONAL EXPERIENCE
+              </div>
+              <div class="d-flex show-area">
+                <div style="width: 80%">
+                  <div
+                    class="editable"
+                    contenteditable="true"
+                    style="font-size: 14px; color: rgb(25, 39, 60)"
+                  >
+                    Master of Computer Application (MCA)
+                  </div>
+                  <div class="d-flex">
+                    <div class="editable bbb mb-0" contenteditable="true">
+                      Veer Bahadur Singh Purvanchal University
+                    </div>
+                  </div>
+                  <div class="gap-4 d-flex">
+                    <div
+                      class="editable"
+                      style="font-size: 12px"
+                      contenteditable="true"
+                    >
+                      <i style="font-size: 12px" class="fas fa-calendar"></i>
+                      2024-2025
+                    </div>
+                    <div
+                      class="editable"
+                      style="font-size: 12px"
+                      contenteditable="true"
+                    >
+                      <i
+                        style="font-size: 12px"
+                        class="fas fa-location-dot"
+                      ></i>
+                      Noida
+                    </div>
+                  </div>
                 </div>
 
-                <div class="show-area">
-                  <span style="font-size: 16px; color: rgb(25, 39, 60)"
-                    >CipherPay</span
+                <div style="width: 20%; margin-top: 5px; display: flex">
+                  <div
+                    style="
+                      border-left: 1px solid gray;
+                      height: 50%;
+                      margin-top: 10px;
+                    "
+                  ></div>
+                  <div>
+                    <div class="ff ms-3" style="font-size: 13px">GPA</div>
+                    <div class="ff ms-3" style="font-size: 13px">
+                      <strong
+                        class="bbb editable"
+                        style="font-size: 1px"
+                        contenteditable="true"
+                        >7.5</strong
+                      >/10
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex show-area">
+                <div style="width: 80%">
+                  <div
+                    class="editable"
+                    contenteditable="true"
+                    style="font-size: 14px; color: rgb(25, 39, 60)"
                   >
-                  <br />
-                  <span class="bbb">Java, Spring Boot, Postman</span>
-                  <br />
-
+                    Master of Computer Application (MCA)
+                  </div>
                   <div class="d-flex">
-                    <div>
-                      <span
-                        class="fas fa-circle me-2"
-                        style="font-size: 3px"
-                      ></span>
-                    </div>
-                    <div>
-                      <span class="bbbb"
-                        >Implemented Postman collections for organizing and
-                        executing API test suites efficiently in Spring Boot
-                        projects, facilitating seamless testing workflows.</span
-                      >
+                    <div class="editable bbb mb-0" contenteditable="true">
+                      Veer Bahadur Singh Purvanchal University
                     </div>
                   </div>
-
-                  <div class="d-flex">
-                    <div>
-                      <span
-                        class="fas fa-circle me-2"
-                        style="font-size: 3px"
-                      ></span>
+                  <div class="gap-4 d-flex">
+                    <div class="editable" contenteditable="true">
+                      <i style="font-size: 12px" class="fas fa-calendar"></i>
+                      2024-2025
                     </div>
-                    <div>
-                      <span class="bbbb"
-                        >Implemented Postman collections for organizing and
-                        executing API test suites efficiently in Spring Boot
-                        projects, facilitating seamless testing workflows.</span
-                      >
+                    <div class="editable" contenteditable="true">
+                      <i
+                        style="font-size: 12px"
+                        class="fas fa-location-dot"
+                      ></i>
+                      Noida
                     </div>
                   </div>
+                </div>
 
-                  <div class="d-flex">
-                    <div>
-                      <span
-                        class="fas fa-circle me-2"
-                        style="font-size: 3px"
-                      ></span>
+                <div style="width: 20%; margin-top: 5px; display: flex">
+                  <div
+                    style="
+                      border-left: 1px solid gray;
+                      height: 50%;
+                      margin-top: 10px;
+                    "
+                  ></div>
+                  <div>
+                    <div class="ff ms-3">GPA</div>
+                    <div class="ff ms-3">
+                      <strong class="bbb editable" contenteditable="true"
+                        >7.5</strong
+                      >/10
                     </div>
-                    <div>
-                      <span class="bbbb"
-                        >Implemented Postman collections for organizing and
-                        executing API test suites efficiently in Spring Boot
-                        projects, facilitating seamless testing workflows.</span
-                      >
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex show-area">
+                <div style="width: 80%">
+                  <div
+                    class="editable"
+                    contenteditable="true"
+                    style="font-size: 14px; color: rgb(25, 39, 60)"
+                  >
+                    Master of Computer Application (MCA)
+                  </div>
+                  <div class="d-flex">
+                    <div class="editable bbb mb-0" contenteditable="true">
+                      Veer Bahadur Singh Purvanchal University
+                    </div>
+                  </div>
+                  <div class="gap-4 d-flex">
+                    <div class="editable" contenteditable="true">
+                      <i style="font-size: 12px" class="fas fa-calendar"></i>
+                      2024-2025
+                    </div>
+                    <div class="editable" contenteditable="true">
+                      <i
+                        style="font-size: 12px"
+                        class="fas fa-location-dot"
+                      ></i>
+                      Noida
+                    </div>
+                  </div>
+                </div>
+
+                <div style="width: 20%; margin-top: 5px; display: flex">
+                  <div
+                    style="
+                      border-left: 1px solid gray;
+                      height: 50%;
+                      margin-top: 10px;
+                    "
+                  ></div>
+                  <div>
+                    <div class="ff ms-3">GPA</div>
+                    <div class="ff ms-3">
+                      <strong class="bbb editable" contenteditable="true"
+                        >7.5</strong
+                      >/10
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex show-area">
+                <div style="width: 80%">
+                  <div
+                    class="editable"
+                    contenteditable="true"
+                    style="font-size: 14px; color: rgb(25, 39, 60)"
+                  >
+                    Master of Computer Application (MCA)
+                  </div>
+                  <div class="d-flex">
+                    <div class="editable bbb mb-0" contenteditable="true">
+                      Veer Bahadur Singh Purvanchal University
+                    </div>
+                  </div>
+                  <div class="gap-4 d-flex">
+                    <div class="editable" contenteditable="true">
+                      <i style="font-size: 12px" class="fas fa-calendar"></i>
+                      2024-2025
+                    </div>
+                    <div class="editable" contenteditable="true">
+                      <i
+                        style="font-size: 12px"
+                        class="fas fa-location-dot"
+                      ></i>
+                      Noida
+                    </div>
+                  </div>
+                </div>
+
+                <div style="width: 20%; margin-top: 5px; display: flex">
+                  <div
+                    style="
+                      border-left: 1px solid gray;
+                      height: 50%;
+                      margin-top: 10px;
+                    "
+                  ></div>
+                  <div>
+                    <div class="ff ms-3">GPA</div>
+                    <div class="ff ms-3">
+                      <strong class="bbb editable" contenteditable="true"
+                        >7.5</strong
+                      >/10
                     </div>
                   </div>
                 </div>
@@ -231,15 +412,17 @@
           </div>
         </div>
 
-        <!-- //***************************/ -->
-
+        <!-- Right-aligned section ****************************-->
         <div class="right-aligned-div">
           <div>
             <div>
-              <div class="bb" style="font-size: 16px; color: gray">
+              <div
+                class="bb text-uppercase"
+                style="font-size: 14px; color: gray"
+              >
                 Technical Skills
               </div>
-              <div class="show-area">
+              <div class="show-area editable" contenteditable="true">
                 <span class="underlined-text">Java</span>
                 <span class="underlined-text">Spring Boot</span>
                 <span class="underlined-text">Microservices</span>
@@ -266,7 +449,7 @@
             </div>
 
             <div style="margin-top: 30px">
-              <div class="bb" style="font-size: 16px; color: gray">
+              <div class="bb" style="font-size: 14px; color: gray">
                 Language
               </div>
               <div
@@ -276,7 +459,8 @@
                   align-items: center;
                   padding: 10px;
                 "
-                class="show-area"
+                class="show-area editable"
+                contenteditable="true"
               >
                 <div class="bbc">English</div>
                 <div style="display: flex">
@@ -294,7 +478,8 @@
                   align-items: center;
                   padding: 10px;
                 "
-                class="show-area"
+                class="show-area editable"
+                contenteditable="true"
               >
                 <div class="bbc">Hindi</div>
                 <div style="display: flex">
@@ -308,17 +493,24 @@
 
             <div style="margin-top: 30px">
               <div>
-                <div class="bb" style="font-size: 16px; color: gray">
+                <div
+                  class="bb text-uppercase"
+                  style="font-size: 14px; color: gray"
+                >
                   Training/Course
                 </div>
-                <div class="show-area">
+                <div class="show-area editable" contenteditable="true">
                   <span class="bbb">Java Backend Developer</span>
                   <br />
                   <span class="bbbb"
                     >As a Backend Developer, I worked at consult IT</span
                   >
                 </div>
-                <div class="show-area" style="margin-top: 10px">
+                <div
+                  class="show-area editable"
+                  style="margin-top: 10px"
+                  contenteditable="true"
+                >
                   <span class="bbb">Java Backend Developer</span>
                   <br />
                   <span class="bbbb"
@@ -327,9 +519,40 @@
                 </div>
               </div>
             </div>
+
+            <div style="margin-top: 30px">
+              <div>
+                <div
+                  class="bb text-uppercase"
+                  style="font-size: 14px; color: gray"
+                >
+                  Strength
+                </div>
+                <div>
+                  <div>
+                    <i class="fas fa-head-side-virus fa-3x text-primary"></i>
+                  </div>
+                  <div class="show-area editable" contenteditable="true">
+                    <span style="font-size: 16px; color: rgb(25, 39, 60)"
+                      >Java Backend Developer</span
+                    >
+                    <br />
+                    <span class="bbbb"
+                      >As a Backend Developer, I worked at consult IT</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ****** -->
           </div>
         </div>
       </div>
     </div>
+    <button (click)="downloadPdf()">Download PDF</button>
+    <!-- your-component.component.html -->
+    <button (click)="pdfDownloadService.downloadPdf()">
+      Download PDF from Server
+    </button>
   </body>
 </html>

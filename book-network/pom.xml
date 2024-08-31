@@ -110,7 +110,15 @@
 			<scope>test</scope>
 		</dependency>
 
-<!--		&lt;!&ndash; https://mvnrepository.com/artifact/com.sun.media/jai_core &ndash;&gt;-->
+		<!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itextpdf</artifactId>
+			<version>5.5.13.4</version>
+		</dependency>
+
+
+		<!--		&lt;!&ndash; https://mvnrepository.com/artifact/com.sun.media/jai_core &ndash;&gt;-->
 <!--		<dependency>-->
 <!--			<groupId>com.sun.media</groupId>-->
 <!--			<artifactId>jai_core</artifactId>-->

@@ -35,8 +35,8 @@ body {
 .bbc {
     padding-bottom: 2px;
     margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 12px;
+    line-height: 14px;
     font-family: Inter, Arial, Helvetica, Noto Sans Devanagari, Noto Sans CJK SC Thin, Noto Sans SC, Noto Sans Hebrew, sans-serif;
 }
 
@@ -65,18 +65,18 @@ body {
     display: flex;
     // justify-content: in;
     width: 100%;
-    padding: 10px;
+    padding: 2px;
     box-sizing: border-box;
 }
 
 .container1 {
     width: 100%;
-    padding: 10px;
+    padding: 2px;
     box-sizing: border-box;
 }
 
 .right-aligned-div {
-    width: 40%;
+    width: 38%;
     /*background-color: #f0f0f0;*/
     // padding: 10px;
 }
@@ -87,14 +87,6 @@ body {
     /* Remove default focus outline */
     border: none;
     /* Remove border when focused */
-}
-
-left-side {
-    align-items: left-side;
-}
-
-right-side {
-    align-items: right-align;
 }
 
 .show-area:hover {
@@ -113,14 +105,14 @@ right-side {
 .a4-template {
     width: 210mm;
     /* A4 width */
-    height: 296mm;
+    height: 297mm;
     /* A4 height */
     margin: auto;
-    padding: 10mm;
+    padding: 8mm;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: #fff;
     font-family: Arial, sans-serif;
-    border: solid gray 1px;
+    // border: solid gray 1px;
     border-radius: 2px;
 }
 

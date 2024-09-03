@@ -29,23 +29,23 @@ public class FileStorageService {
         return uploadFile(sourceFile, fileUploadSubPath);
     }
 
-    private void createDirectoryIfNotExists() {
-        File directory = new File(fileUploadPath);
+    private void createDirectoryIfNotExists(String finalUploadPath) {
+        File directory = new File(finalUploadPath);
         if (!directory.exists()) {
             if (!directory.mkdirs()) {
-                throw new RuntimeException("Failed to create directory: " + fileUploadPath);
+                throw new RuntimeException("Failed to create directory: " + finalUploadPath);
             }
         }
     }
 
     private String uploadFile(@Nonnull MultipartFile sourceFile, @Nonnull String fileUploadSubPath) {
         final String finalUploadPath = fileUploadPath + File.separator + fileUploadSubPath;
-        File targetFolder = new File(fileUploadPath);
+        File targetFolder = new File(finalUploadPath);
 
         if (!targetFolder.exists()) {
-//            createDirectoryIfNotExists();
-            log.warn("Failed to create the target folder");
-            return null;
+            createDirectoryIfNotExists(finalUploadPath);
+//            log.warn("Failed to create the target folder");
+//            return null;
         }
         final String fileExtension = getFileExtension(sourceFile.getOriginalFilename());
         String targetFilePath = finalUploadPath + File.separator + System.currentTimeMillis() + "." + fileExtension;

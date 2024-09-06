@@ -53,7 +53,7 @@ export class MyBooksComponent {
 
   goToPage(page: number) {
     this.page = page;
-    this.findAllBooks;
+    this.findAllBooks();
   }
 
   goToNextPage() {

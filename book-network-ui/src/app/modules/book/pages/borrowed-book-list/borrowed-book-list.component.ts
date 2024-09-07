@@ -2,14 +2,17 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {
   BorrowedBookResponse,
+  FeedbackRequest,
   PageResponseBorrowedBookResponse,
 } from '../../../../services/models';
-import { BookService } from '../../../../services/services';
+import { BookService, FeedbackService } from '../../../../services/services';
+import { FormsModule } from '@angular/forms';
+import { RatingComponent } from '../../components/rating/rating.component';
 
 @Component({
   selector: 'app-borrowed-book-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule, RatingComponent],
   templateUrl: './borrowed-book-list.component.html',
   styleUrl: './borrowed-book-list.component.scss',
 })
@@ -17,8 +20,18 @@ export class BorrowedBookListComponent implements OnInit {
   borrowedBooks: PageResponseBorrowedBookResponse = {};
   page: number = 0;
   size: number = 1;
+  pages: any = [];
+  selectedBook: BorrowedBookResponse | undefined = undefined;
+  feedbackRequest: FeedbackRequest = {
+    bookId: 0,
+    comment: '',
+    note: 0,
+  };
 
-  constructor(private bookService: BookService) {}
+  constructor(
+    private bookService: BookService,
+    private feedbackService: FeedbackService
+  ) {}
   ngOnInit(): void {
     this.findAllBorrowedBooks();
   }
@@ -31,11 +44,41 @@ export class BorrowedBookListComponent implements OnInit {
       .subscribe({
         next: (resp) => {
           this.borrowedBooks = resp;
+          this.pages = Array(this.borrowedBooks.totalPage)
+            .fill(0)
+            .map((x, i) => i);
         },
       });
   }
-  returnBorrowedBook(_t16: BorrowedBookResponse) {
-    throw new Error('Method not implemented.');
+  returnBorrowedBook(book: BorrowedBookResponse) {
+    this.selectedBook = book;
+    this.feedbackRequest.bookId = book.id as number;
+  }
+
+  returnBook(withFeedback: boolean) {
+    this.bookService
+      .returnBorrowBook({
+        'book-id': this.selectedBook?.id as number,
+      })
+      .subscribe({
+        next: () => {
+          if (withFeedback) {
+            this.giveFeedback();
+          }
+          this.selectedBook = undefined;
+          this.findAllBorrowedBooks();
+        },
+      });
+  }
+
+  private giveFeedback() {
+    this.feedbackService
+      .saveFeedback({
+        body: this.feedbackRequest,
+      })
+      .subscribe({
+        next: () => {},
+      });
   }
 
   goToFirstPage() {

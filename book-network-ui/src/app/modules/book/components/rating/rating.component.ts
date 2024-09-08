@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-rating',
@@ -10,6 +10,7 @@ import { Component, Input } from '@angular/core';
 })
 export class RatingComponent {
   @Input() rating: number = 0;
+  @Output() ratingClicked: EventEmitter<number> = new EventEmitter<number>();
   maxRating: number = 5;
 
   get fullStars(): number {

@@ -19,7 +19,7 @@ import { RatingComponent } from '../../components/rating/rating.component';
 export class BorrowedBookListComponent implements OnInit {
   borrowedBooks: PageResponseBorrowedBookResponse = {};
   page: number = 0;
-  size: number = 1;
+  size: number = 5;
   pages: any = [];
   selectedBook: BorrowedBookResponse | undefined = undefined;
   feedbackRequest: FeedbackRequest = {

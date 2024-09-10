@@ -5,18 +5,17 @@ services:
     environment:
       POSTGRES_USER: username
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: book_social_network  # Uncomment this line if you want to specify the database name
-#      PGDATA: /var/lib/postgresql/data
+      POSTGRES_DB: book_social_network # Uncomment this line if you want to specify the database name
+      #      PGDATA: /var/lib/postgresql/data
       PGDATA: /data/postgres
     volumes:
-      - postgres:/var/lib/postgresql/data  # Corrected volume mount path
-#      - postgres:/data/postgres
+      - postgres:/var/lib/postgresql/data # Corrected volume mount path
+    #      - postgres:/data/postgres
     ports:
       - 5432:5432
     networks:
       - spring-demo
     restart: unless-stopped
-
 
   pgadmin:
     container_name: pgadmin_container1
@@ -24,7 +23,7 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin@pgadmin.org}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
+      PGADMIN_CONFIG_SERVER_MODE: "False"
     volumes:
       - pgadmin:/var/lib/pgadmin
     ports:
@@ -39,6 +38,16 @@ services:
     ports:
       - 1080:1080
       - 1026:1025
+
+  bsn-api:
+    container_name: bsn-api
+    image: bsn/bsn:1.0.0
+    ports:
+      - 8088:8088
+    networks:
+      - spring-demo
+    depends_on:
+      - postgres
 
 networks:
   spring-demo:

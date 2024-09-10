@@ -1,6 +1,6 @@
 import { PdfDownloadService } from './../../../../services/services/pdf-download.service';
 import { Component } from '@angular/core';
-import { PdfExportService } from '../../../../services/services/pdf-export.service';
+// import { PdfExportService } from '../../../../services/services/pdf-export.service';
 
 @Component({
   selector: 'app-resume',
@@ -11,11 +11,11 @@ import { PdfExportService } from '../../../../services/services/pdf-export.servi
 })
 export class ResumeComponent {
   constructor(
-    private pdfExportService: PdfExportService,
+    // private pdfExportService: PdfExportService,
     public pdfDownloadService: PdfDownloadService
   ) {}
 
   public downloadPdf(): void {
-    this.pdfExportService.exportToPdf('contentToExport');
+    // this.pdfExportService.exportToPdf('contentToExport');
   }
 }

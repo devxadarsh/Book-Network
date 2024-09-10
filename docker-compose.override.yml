@@ -1,0 +1,55 @@
+services:
+  bsn-api:
+    container_name: bsn-api
+    image: bsn/bsn:1.0.0
+    #  environment:
+    #    db_url: /
+    #    active_profile: dev
+    #    app_version: 1.0.0
+    #  We are not providing it because we are directly using it in the Dockerfile
+    #  We can configure it if we need it in future
+    ports:
+      - 8088:8088
+    networks:
+      - spring-demo
+    depends_on:
+      - postgres
+
+networks:
+  spring-demo:
+    driver: bridge
+# Merging Multiple Docker Compose Files:
+# If you want to combine configurations from multiple Docker Compose files,
+#  you can specify multiple -f options in a single command.
+
+# Docker Compose merges these files with the following precedence order:
+# the last specified file takes precedence over the previous ones.
+
+# Example of Merging Files:
+# Suppose you have
+
+# docker-compose.yml (base configuration)
+# docker-compose.override.yml (overrides or additional settings)
+
+# To use both files:
+
+# docker-compose -f docker-compose.yml -f docker-compose.override.yml up
+
+# In this case, docker-compose.override.yml will override or add to the configuration in docker-compose.yml.
+
+# *****************************************
+
+# Here’s an example of how you might manage your containers:
+
+# Start Containers: Start containers using both docker-compose.yml and docker-compose.override.yml:
+
+# docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
+# Stop and Remove Containers: If you want to stop and remove everything, including those from the override file:
+
+# docker-compose -f docker-compose.yml -f docker-compose.override.yml down
+
+# Stopping Specific Containers: If you’ve used different project names, you can stop specific containers:
+
+# docker-compose -p myproject down
+

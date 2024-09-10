@@ -10,7 +10,8 @@
 	</parent>
 	<groupId>com.devx</groupId>
 	<artifactId>book-network</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+<!--	<version>0.0.1-SNAPSHOT</version>-->
+	<version>1.0.0</version>
 	<name>book-network</name>
 	<description>Demo Login project for Spring Boot</description>
 	<url/>

@@ -1,11 +1,11 @@
-FROM node:20 as build-stage
+FROM node:20 AS build-stage
 WORKDIR /app
 COPY package.json ./
 RUN npm install
 COPY . .
 
 RUN npm run build --prod
-FROM ngnix:alpine
-COPY ngnix.conf etc/ngnix/ngnix.conf
-COPY --from=stage /app/dist/book-network-ui /user/share/ngnix/html
+FROM nginx:alpine
+COPY nginx.conf etc/nginx/nginx.conf
+COPY --from=build-stage /app/dist/book-network-ui /user/share/nginx/html
 EXPOSE 80

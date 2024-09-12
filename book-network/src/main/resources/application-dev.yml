@@ -42,11 +42,29 @@ spring:
 #        timeout: 3000
 #        writetimeout: 5000
 
+# # for docker normal case
+#   mail:
+#     host: smtp.gmail.com
+#     port: 465
+#     username: adarshpandey12081999raj@gmail.com
+#     password: tmvj vmry uizl rdgq
+#     properties:
+#       mail:
+#         smtp:
+#           auth: true
+#           ssl:
+#             enable: true
+#             trust: "*"
+#         starttls:
+#           enable: true
+#     protocol: smtp
+
+# for docker CI/CD
   mail:
-    host: smtp.gmail.com
+    host: ${EMAIL_HOST_NAME}
     port: 465
-    username: adarshpandey12081999raj@gmail.com
-    password: tmvj vmry uizl rdgq
+    username: ${EMAIL_USER_NAME}
+    password: ${EMAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -67,6 +85,10 @@ application:
   mailing:
     frontend:
       activation-url: http://localhost:4200/activate-account
+
+# adding for CI/CD. input allowed list of ports or urls or ip
+  cors:
+    origins: http://localhost:4200,http://localhost:8080
 
   file:
     uploads:

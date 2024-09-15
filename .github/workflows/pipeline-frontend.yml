@@ -132,7 +132,7 @@ jobs:
           docker compose -f docker-compose.yml up -d
           EOF
 
-#  health-check:1
+#  health-check:
 #    name: UI Health Check
 #    runs-on: self-hosted
 #    needs: [deploy]

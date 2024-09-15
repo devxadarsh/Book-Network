@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f96dbd-f12b-4b90-bae3-ae00fb5dbdc7" name="Changes" comment="Implemented the boot module">
-      <change afterPath="$PROJECT_DIR$/docker-compose.override.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-network/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-network/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d1f96dbd-f12b-4b90-bae3-ae00fb5dbdc7" name="Changes" comment="Implemented the boot module" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +44,7 @@
     "Maven.book-network [clean].executor": "Run",
     "Maven.book-network [compile].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Merging master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/adarshpandey/Downloads/book",
     "project.structure.last.edited": "Modules",

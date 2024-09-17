@@ -104,7 +104,7 @@ jobs:
             PROFILE=dev
             APP_VERSION=${{ steps.extract_version.outputs.VERSION }}
 
-  # deploy:
+  # deploy:1
   #   name: Deploy Backend
   #   runs-on: self-hosted
   #   needs: [build-image]

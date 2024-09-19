@@ -9,7 +9,6 @@ server:
     key-password: password
   additional-tomcat-connectors: 8088
 
-
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/book_social_network
@@ -20,61 +19,61 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-#    properties:
-#      hibernate:
-#        format_sql: true
+    #    properties:
+    #      hibernate:
+    #        format_sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
+      #  mail:
+      #    host: localhost
+      #    port: 1026
+      #    username: username
+      #    password: password
+      #    properties:
+      #      mail:
+      #        smtp:
+      #          trust: "*"
+      #        auth: true
+      #        starttls:
+      #          enable: true
+      #        connectiontimeout: 5000
+      #        timeout: 3000
+      #        writetimeout: 5000
+
+    # for docker normal case
+    mail:
+      host: smtp.gmail.com
+      port: 465
+      username: adarshpandey12081999raj@gmail.com
+      password: tmvj vmry uizl rdgq
+      properties:
+        mail:
+          smtp:
+            auth: true
+            ssl:
+              enable: true
+              trust: "*"
+          starttls:
+            enable: true
+      protocol: smtp
+
+#  # for docker CI/CD
 #  mail:
-#    host: localhost
-#    port: 1026
-#    username: username
-#    password: password
+#    host: ${EMAIL_HOST_NAME}
+#    port: 465
+#    username: ${EMAIL_USER_NAME}
+#    password: ${EMAIL_PASSWORD}
 #    properties:
 #      mail:
 #        smtp:
-#          trust: "*"
-#        auth: true
+#          auth: true
+#          ssl:
+#            enable: true
+#            trust: "*"
 #        starttls:
 #          enable: true
-#        connectiontimeout: 5000
-#        timeout: 3000
-#        writetimeout: 5000
-
-# # for docker normal case
-#   mail:
-#     host: smtp.gmail.com
-#     port: 465
-#     username: adarshpandey12081999raj@gmail.com
-#     password: tmvj vmry uizl rdgq
-#     properties:
-#       mail:
-#         smtp:
-#           auth: true
-#           ssl:
-#             enable: true
-#             trust: "*"
-#         starttls:
-#           enable: true
-#     protocol: smtp
-
-# for docker CI/CD
-  mail:
-    host: ${EMAIL_HOST_NAME}
-    port: 465
-    username: ${EMAIL_USER_NAME}
-    password: ${EMAIL_PASSWORD}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          ssl:
-            enable: true
-            trust: "*"
-        starttls:
-          enable: true
-    protocol: smtp
+#    protocol: smtp
 
 application:
   security:
@@ -86,12 +85,10 @@ application:
     frontend:
       activation-url: http://localhost:4200/activate-account
 
-# adding for CI/CD. input allowed list of ports or urls or ip
+  # adding for CI/CD. input allowed list of ports or urls or ip
   cors:
     origins: http://localhost:4200,http://localhost:8080
 
   file:
     uploads:
       photos-output-path: ./uploads
-
-

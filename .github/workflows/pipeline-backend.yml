@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: "21"
-          distribution: "corretto"
+          distribution: "temurin"
 
       - name: Running Unit Tests
         run: |
@@ -43,7 +43,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: "21"
-          distribution: "corretto"
+          distribution: "temurin"
 
       - name: Running Unit Tests
         run: |
@@ -63,7 +63,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: "21"
-          distribution: "corretto"
+          distribution: "temurin"
 
       - name: Compile project
         run: |
@@ -79,7 +79,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: "21"
-          distribution: "corretto"
+          distribution: "temurin"
       - name: Extract project version
         id: extract_version
         run: |

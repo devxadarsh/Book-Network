@@ -5,7 +5,7 @@ services:
     environment:
       POSTGRES_USER: username
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: book_social_network # Uncomment this line if you want to specify the database name
+      POSTGRES_DB: book_social_network # Uncomment this line if you want to specify database name
       #      PGDATA: /var/lib/postgresql/data
       PGDATA: /data/postgres
     volumes:
